@@ -2,6 +2,10 @@
 
 namespace JobListingsTheme\DI;
 
+use JobListingsTheme\Core\Assets;
+use JobListingsTheme\Core\Assets\Frontend;
+use JobListingsTheme\Core\Assets\Editor;
+use JobListingsTheme\Core\Assets\Cdn;
 use League\Container\Container as LeagueContainer;
 use League\Container\ReflectionContainer;
 use JobListingsTheme\Core\Theme_Setup;
@@ -11,8 +15,7 @@ use Reflection;
  * Singleton Dependency Injection Container
  * 
  * This class wraps League\Container to manage service dependencies
- * throughout the theme. It manually tracks service classes and 
- * supports lazy instantiation with constructor injection.
+ * throughout the theme. 
  */
 class Container {
     /**
@@ -29,7 +32,8 @@ class Container {
      * Manually tracked list of service class names
      */
     private array $services = [
-        Theme_Setup::class,
+        Assets::class => [ 'bootable' => true ],
+        Theme_Setup::class => [ 'bootable' => true ],
     ];
 
     /**
@@ -38,7 +42,7 @@ class Container {
      */
     private function __construct() {
         $this->container = new LeagueContainer();
-        $this->container->delegate(new ReflectionContainer());
+        $this->container->delegate(new ReflectionContainer(cacheResolutions: true));
         $this->register_services();
     }
 
@@ -52,21 +56,28 @@ class Container {
         return self::$instance;
     }
 
-     /**
+    /**
      * Register services with the container.
      * Add additional services and their dependencies here.
      */
     private function register_services(): void {
-        $this->container->add( Theme_Setup::class )->addArgument( $this->container );
+        foreach ( $this->services as $class => $config ) {
+            $definition = $this->container->add($class);
+    
+            if ( ! empty($config['bootable']) ) {
+                $definition->addTag('bootable');
+            }
+        }
     }
 
     /**
-     * Initialize all registered services.
-     * Assumes each service has an init() method.
+     * Boot all services that are tagged as 'bootable'.
      */
-    public function init_services(): void {
-        foreach ( $this->services as $service ) {
-            $this->container->get( $service )->init();
+    public function boot_services(): void {
+        foreach ($this->container->get('bootable') as $service) {
+            if (method_exists($service, 'boot')) {
+                $service->boot();
+            }
         }
     }
 
