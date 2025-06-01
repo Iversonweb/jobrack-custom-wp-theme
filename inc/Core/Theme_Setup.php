@@ -2,11 +2,13 @@
 
 namespace JobListingsTheme\Core;
 
-class Theme_Setup {
+use JobListingsTheme\Contracts\BootableInterface;
+
+class Theme_Setup implements BootableInterface {
     /**
      * Hook theme setup logic to WordPress 'after_setup_theme' action.
      */
-    public function init(): void {
+    public function boot(): void {
         add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
     }
 

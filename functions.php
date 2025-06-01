@@ -5,17 +5,19 @@
  * @package JobListingsTheme
  */
 
+defined( 'ABSPATH' ) || die( 'Seems like you stumbled here by accident mate!' );
 
-if ( ! defined( 'ABSPATH' ) ) {
-    die( 'Seems like you stumbled here by accident mate!' );
-}
-
-if ( file_exists ( __DIR__ . '/vendor/autoload.php' )) {
+if ( file_exists ( __DIR__ . '/vendor/autoload.php' ) ) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-//Define theme constants
-define ( 'JOB_LISTINGS_THEME_DIR', get_template_directory() );
-define ( 'JOB_LISTINGS_THEME_URI', get_template_directory_uri() );
+// Job Rack Definitions
+define( 'JOB_LISTINGS_THEME_DIR', get_template_directory() );
+define( 'JOB_LISTINGS_THEME_URI', get_template_directory_uri() );
 
+use JobListingsTheme\Theme;
 
+// Bootstrap the theme
+add_action( 'after_setup_theme', function () {
+    Theme::bootstrap();
+} );
