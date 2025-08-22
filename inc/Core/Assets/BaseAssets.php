@@ -2,7 +2,7 @@
 
 namespace JobListingsTheme\Core\Assets;
 
-class Base_Assets {
+class BaseAssets {
     protected function asset_uri(string $path): string {
         return JOB_LISTINGS_THEME_URI . '/assets/' . ltrim($path, '/');
     }

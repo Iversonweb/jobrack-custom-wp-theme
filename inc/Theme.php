@@ -34,8 +34,7 @@ class Theme {
      * Static entry point for bootstrapping the theme.
      */
     public static function bootstrap(): void {
-        $container = Container::get_instance();
-        $theme     = new self( $container );
-        $theme->run();
-    }
+		$theme = new self(Container::get_instance());
+		$theme->run();
+	}
 }

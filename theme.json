@@ -2,6 +2,7 @@
     "$schema": "https://schemas.wp.org/wp/6.5/theme.json",
     "version": 2,
     "settings": {
+        "appearanceTools": true,
         "color": {
             "defaultPalette": true,
             "palette": [
@@ -95,7 +96,7 @@
         "typography": {
             "fontFamilies": [
                 {
-                    "fontFamily": "Jost serif",
+                    "fontFamily": "\"Jost\", sans-serif",
                     "slug": "jr-jost",
                     "name": "JR Jost"
                 }

@@ -2,13 +2,9 @@
 
 namespace JobListingsTheme\DI;
 
-use JobListingsTheme\Core\Assets;
-use JobListingsTheme\Core\Assets\Frontend;
-use JobListingsTheme\Core\Assets\Editor;
-use JobListingsTheme\Core\Assets\Cdn;
 use League\Container\Container as LeagueContainer;
 use League\Container\ReflectionContainer;
-use JobListingsTheme\Core\Theme_Setup;
+use JobListingsTheme\DI\Providers\ServiceProvider;
 use Reflection;
 
 /**
@@ -29,21 +25,12 @@ class Container {
     private LeagueContainer $container;
 
     /**
-     * Manually tracked list of service class names
-     */
-    private array $services = [
-        Assets::class => [ 'bootable' => true ],
-        Theme_Setup::class => [ 'bootable' => true ],
-    ];
-
-    /**
      * Private constructor to enforce singleton pattern.
      * Initializes the League\Container and registers services.
      */
     private function __construct() {
         $this->container = new LeagueContainer();
-        $this->container->delegate(new ReflectionContainer(cacheResolutions: true));
-        $this->register_services();
+        $this->container->delegate( new ReflectionContainer( cacheResolutions: true ) );
     }
 
     /**
@@ -57,29 +44,16 @@ class Container {
     }
 
     /**
-     * Register services with the container.
-     * Add additional services and their dependencies here.
-     */
-    private function register_services(): void {
-        foreach ( $this->services as $class => $config ) {
-            $definition = $this->container->add($class);
-    
-            if ( ! empty($config['bootable']) ) {
-                $definition->addTag('bootable');
-            }
-        }
-    }
-
-    /**
      * Boot all services that are tagged as 'bootable'.
      */
     public function boot_services(): void {
-        foreach ($this->container->get('bootable') as $service) {
-            if (method_exists($service, 'boot')) {
-                $service->boot();
-            }
-        }
-    }
+        $this->container->addServiceProvider( new ServiceProvider() );
+		foreach ($this->container->get('bootable') as $service) {
+			if (method_exists($service, 'boot')) {
+				$service->boot();
+			}
+		}
+	}
 
     /**
      * Return the underlying League\Container instance.

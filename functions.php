@@ -12,8 +12,8 @@ if ( file_exists ( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 // Job Rack Definitions
-define( 'JOB_LISTINGS_THEME_DIR', get_template_directory() );
-define( 'JOB_LISTINGS_THEME_URI', get_template_directory_uri() );
+defined( 'JOB_LISTINGS_THEME_DIR' ) || define( 'JOB_LISTINGS_THEME_DIR', get_template_directory() );
+defined( 'JOB_LISTINGS_THEME_URI' ) || define( 'JOB_LISTINGS_THEME_URI', get_template_directory_uri() );
 
 use JobListingsTheme\Theme;
 
