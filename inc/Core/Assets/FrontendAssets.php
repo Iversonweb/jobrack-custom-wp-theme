@@ -34,6 +34,62 @@ class FrontendAssets extends BaseAssets implements BootableInterface {
             'ver'    => null,
             'media'  => 'all',
         ],
+        [
+            'handle' => 'job-animation',
+            'src'    => 'css/animation.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
+        [
+            'handle' => 'job-bootstrap',
+            'src'    => 'css/bootstrap.min.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
+        [
+            'handle' => 'job-fontawesome',
+            'src'    => 'css/fontawesome.min.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
+        [
+            'handle' => 'job-morris',
+            'src'    => 'css/morris.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
+        [
+            'handle' => 'job-nice-select',
+            'src'    => 'css/nice-select.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
+        [
+            'handle' => 'job-rangeSlider',
+            'src'    => 'css/rangeSlider.min.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
+        [
+            'handle' => 'job-slick-theme',
+            'src'    => 'css/slick-theme.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
+        [
+            'handle' => 'job-slick',
+            'src'    => 'css/slick.css',
+            'deps'   => [],
+            'ver'    => null,
+            'media'  => 'all',
+        ],
     ];
 
     /**
@@ -91,7 +147,7 @@ class FrontendAssets extends BaseAssets implements BootableInterface {
      */
     public function boot(): void 
     {
-        add_action('wp_enqueue_scripts', [$this, 'enqueue']);
+        add_action('enqueue_block_assets', [$this, 'enqueue']);
     }
 
     /**

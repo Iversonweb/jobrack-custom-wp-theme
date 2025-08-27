@@ -14,31 +14,11 @@ class EditorAssets extends BaseAssets implements BootableInterface {
      */
     protected array $styles = [
         [
-            'handle' => 'jr-jost-css',
-            'src'    => 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap',
-            'deps'   => [],
-            'ver'    => null,
-        ],
-        [
             'handle' => 'job-editor',
             'src'    => 'css/editor.css',
             'deps'   => [],
             'ver'    => null,
             'local'  => true, // mark this as theme asset
-        ],
-        [
-            'handle' => 'job-shared',
-            'src'    => 'css/style-shared.css',
-            'deps'   => [],
-            'ver'    => null,
-            'local'  => true,
-        ],
-        [
-            'handle' => 'job-custom-editor',
-            'src'    => 'css/custom.css',
-            'deps'   => [],
-            'ver'    => null,
-            'local'  => true,
         ],
     ];
 

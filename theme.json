@@ -101,6 +101,11 @@
                     "name": "JR Jost"
                 }
             ]
+        },
+        "custom": {
+            "images": {
+                "mainLogo": "file:./assets/img/logo.png"
+            }
         }
     },
     "styles": {
@@ -117,5 +122,17 @@
                 }
             }
         }
+    },
+    "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
     }
+  ]
 }
