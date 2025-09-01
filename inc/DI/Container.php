@@ -1,10 +1,10 @@
 <?php
 
-namespace JobListingsTheme\DI;
+namespace JobRackTheme\DI;
 
 use League\Container\Container as LeagueContainer;
 use League\Container\ReflectionContainer;
-use JobListingsTheme\DI\Providers\ServiceProvider;
+use JobRackTheme\DI\Providers\ServiceProvider;
 use Reflection;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace JobListingsTheme;
+namespace JobRackTheme;
 
-use JobListingsTheme\DI\Container;
+use JobRackTheme\DI\Container;
 
 /**
  * Main Theme bootstrap class.

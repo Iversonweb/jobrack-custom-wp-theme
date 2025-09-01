@@ -1,9 +1,9 @@
 <?php
 
-namespace JobListingsTheme\DI\Providers;
+namespace JobRackTheme\DI\Providers;
 
 use League\Container\ServiceProvider\AbstractServiceProvider;
-use JobListingsTheme\Core\ThemeSupports;
+use JobRackTheme\Core\ThemeSupports;
 
 class SupportServiceProvider extends AbstractServiceProvider {
     
@@ -13,7 +13,7 @@ class SupportServiceProvider extends AbstractServiceProvider {
      * @var array
      */
     protected array $provides = array(
-        'JobListingsTheme\\Core\\ThemeSupports' => ThemeSupports::class,
+        'JobRackTheme\\Core\\ThemeSupports' => ThemeSupports::class,
     );
 
     /**

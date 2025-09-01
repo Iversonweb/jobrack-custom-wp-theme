@@ -1,6 +1,6 @@
 <?php
 
-namespace JobListingsTheme\Contracts;
+namespace JobRackTheme\Contracts;
 
 interface BootableInterface {
     /**

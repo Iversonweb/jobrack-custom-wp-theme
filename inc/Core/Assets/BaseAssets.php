@@ -1,13 +1,13 @@
 <?php
 
-namespace JobListingsTheme\Core\Assets;
+namespace JobRackTheme\Core\Assets;
 
 class BaseAssets {
     protected function asset_uri(string $path): string {
-        return JOB_LISTINGS_THEME_URI . '/assets/' . ltrim($path, '/');
+        return JOB_RACK_THEME_URI . '/assets/' . ltrim($path, '/');
     }
 
     protected function asset_path(string $path): string {
-        return JOB_LISTINGS_THEME_DIR . '/assets/' . ltrim($path, '/');
+        return JOB_RACK_THEME_DIR . '/assets/' . ltrim($path, '/');
     }
 }

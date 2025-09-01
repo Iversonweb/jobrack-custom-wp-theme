@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Main Header
- * Slug: job-rack/main-header
+ * Slug: job-rack/headers/main-header
  * Categories: header
  * Description: A header section.
  */
@@ -22,7 +22,7 @@
                 </div>
                 <!-- /wp:group -->
 
-                <!-- wp:navigation {"ref":5,"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"jr-jost","layout":{"type":"flex","justifyContent":"right"}} /-->
+                <!-- wp:navigation {"ref":5,"textColor":"jr-paleblue","style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"jr-jost","layout":{"type":"flex","justifyContent":"right"}} /-->
             </div>
             <!-- /wp:group -->
         </div>

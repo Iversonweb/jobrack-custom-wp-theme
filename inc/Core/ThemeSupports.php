@@ -1,9 +1,9 @@
 <?php
 
-namespace JobListingsTheme\Core;
+namespace JobRackTheme\Core;
 
-use JobListingsTheme\Core\Assets\BaseAssets;
-use JobListingsTheme\Contracts\BootableInterface;
+use JobRackTheme\Core\Assets\BaseAssets;
+use JobRackTheme\Contracts\BootableInterface;
 
 class ThemeSupports extends BaseAssets implements BootableInterface {
     

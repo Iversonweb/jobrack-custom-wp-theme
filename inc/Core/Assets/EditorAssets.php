@@ -1,9 +1,9 @@
 <?php
 
-namespace JobListingsTheme\Core\Assets;
+namespace JobRackTheme\Core\Assets;
 
-use JobListingsTheme\Core\Assets\BaseAssets;
-use JobListingsTheme\Contracts\BootableInterface;
+use JobRackTheme\Core\Assets\BaseAssets;
+use JobRackTheme\Contracts\BootableInterface;
 
 class EditorAssets extends BaseAssets implements BootableInterface {
     

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Main Footer
- * Slug: job-rack/main-footer
+ * Slug: job-rack/footers/main-footer
  * Categories: footer
  * Description: A footer section.
  */

@@ -1,10 +1,10 @@
 {
-    "name": "iversonweb/job-listings-theme",
+    "name": "iversonweb/job-rack-theme",
     "description": "Custom WordPress theme with modern architecture",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "JobListingsTheme\\": "inc/"
+            "JobRackTheme\\": "inc/"
         }
     },
     "authors": [

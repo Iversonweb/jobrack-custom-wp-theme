@@ -1,9 +1,9 @@
 <?php
 
-namespace JobListingsTheme\DI\Providers;
+namespace JobRackTheme\DI\Providers;
 
-use JobListingsTheme\DI\Providers\AssetsServiceProvider;
-use JobListingsTheme\DI\Providers\SupportServiceProvider;
+use JobRackTheme\DI\Providers\AssetsServiceProvider;
+use JobRackTheme\DI\Providers\SupportServiceProvider;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 
 class ServiceProvider extends AbstractServiceProvider {
@@ -14,9 +14,9 @@ class ServiceProvider extends AbstractServiceProvider {
      * @var array
      */
     protected $provides = [
-		'JobListingsTheme\\Core\\Assets\\EditorAssets',
-        'JobListingsTheme\\Core\\Assets\\FrontendAssets',
-        'JobListingsTheme\\Core\\ThemeSupports',
+		'JobRackTheme\\Core\\Assets\\EditorAssets',
+        'JobRackTheme\\Core\\Assets\\FrontendAssets',
+        'JobRackTheme\\Core\\ThemeSupports',
     ];
     
     /**
